@@ -10,7 +10,11 @@ class App extends Component {
     super()
 
     this.state = {
-        books: []
+        books: [
+          {name: 'a', price: 2, imageUrl: 'e'},
+          {name: 'b', price: 1, imageUrl: 'd'},
+          {name: 'c', price: 3, imageUrl: 'f'}
+        ]
     }
   }
 
@@ -27,9 +31,10 @@ class App extends Component {
   render(){
   return (
     <div>
-      <Dashboard />
-      <Form />
+      <Dashboard books={this.state}/>
       <Header />
+      <Form />
+      
     </div>
   );
 }

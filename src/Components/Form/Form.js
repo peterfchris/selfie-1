@@ -11,21 +11,9 @@ export class Form extends Component {
     }
   }
 
-  handleUpdateImageUrl = (e) => {
+  handleChange = (e) => {
     this.setState({
-      imageUrl: e
-    })
-  }
-
-  handleUpdateProductName = (e) => {
-    this.setState({
-      productName: e
-    })
-  }
-
-  handleUpdatePrice = (e) => {
-    this.setState({
-      price: e
+      [e.target.name]: e.target.value
     })
   }
 
@@ -46,24 +34,25 @@ export class Form extends Component {
             name="imageUrl"
             type='text'
             value={this.state.imageUrl}
-            onChange={e => this.handleUpdateImageUrl(e.target.value)} />
+            onChange={this.handleChange} />
           <h3>Product Name:</h3>
           <input 
             name="productName"
             type='text'
             value={this.state.productName}
-            onChange={e => this.handleUpdateProductName(e.target.value)} />
+            onChange={this.handleChange} />
           <h3>Price</h3>
           <input
             name="price"
             type='text'
             value={this.state.price}
-            onChange={e => this.handleUpdatePrice(e.target.value)}></input>
+            onChange={this.handleChange}></input>
           <button onClick={this.handleCancel}>
             Cancel
           </button>
           <button>Add to Inventory</button>
         </form>
+        
       </div>
     )
   }
