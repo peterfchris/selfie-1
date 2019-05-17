@@ -45,16 +45,19 @@ export class Form extends Component {
           <input 
             name="imageUrl"
             type='text'
+            value={this.state.imageUrl}
             onChange={e => this.handleUpdateImageUrl(e.target.value)} />
           <h3>Product Name:</h3>
           <input 
             name="productName"
             type='text'
+            value={this.state.productName}
             onChange={e => this.handleUpdateProductName(e.target.value)} />
           <h3>Price</h3>
           <input
             name="price"
             type='text'
+            value={this.state.price}
             onChange={e => this.handleUpdatePrice(e.target.value)}></input>
           <button onClick={this.handleCancel}>
             Cancel
